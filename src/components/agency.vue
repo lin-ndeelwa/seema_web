@@ -38,6 +38,21 @@
                             </v-list-tile-sub-title>
                         </v-list-tile-content>
                     </v-list-tile>
+
+                    <v-list-tile avatar>
+                        <v-list-tile-content>
+                            <v-list-tile-title>Events Category</v-list-tile-title>
+                            <v-list-tile-sub-title>
+                                <v-text-field
+                                        label="Category"
+                                        v-model="agency.category"
+                                        box
+                                        required
+                                ></v-text-field>
+                            </v-list-tile-sub-title>
+                        </v-list-tile-content>
+                    </v-list-tile>
+
                     <v-list-tile avatar>
                         <v-list-tile-content>
                             <v-list-tile-title>Slogan</v-list-tile-title>
@@ -124,6 +139,7 @@
         },
         methods:{
             save(){
+                this.save_object(this.agency)
                 console.log(this.agency)
             }
         }

@@ -28,3 +28,7 @@
 {"code":103,"message":"Class agency does not exist.","level":"error","timestamp":"2018-04-15T09:13:05.054Z"}
 {"error":{"code":103,"message":"Class anything already exists."},"level":"error","message":"Error generating response. ParseError { code: 103, message: 'Class anything already exists.' }","timestamp":"2018-04-15T09:13:16.281Z"}
 {"code":103,"message":"Class anything already exists.","level":"error","timestamp":"2018-04-15T09:13:16.286Z"}
+{"error":{"code":103,"message":"Class agency already exists."},"level":"error","message":"Error generating response. ParseError { code: 103, message: 'Class agency already exists.' }","timestamp":"2018-04-15T14:01:06.649Z"}
+{"code":103,"message":"Class agency already exists.","level":"error","timestamp":"2018-04-15T14:01:06.656Z"}
+{"error":{"code":103,"message":"Class anything already exists."},"level":"error","message":"Error generating response. ParseError { code: 103, message: 'Class anything already exists.' }","timestamp":"2018-04-15T14:02:41.370Z"}
+{"code":103,"message":"Class anything already exists.","level":"error","timestamp":"2018-04-15T14:02:41.374Z"}

@@ -45,8 +45,28 @@ const parseMixin = function({router}){
             getRoles(){
                 var Role
             }
-
         ,
+            save_object(obj){
+
+                var ParseObject = Parse.Object.extend(this.class_name);
+                var parseObject = new ParseObject();
+
+                Object.keys(obj).forEach( key => {
+                    parseObject.set(key,obj[key])
+                })
+
+                Object.set('created_by',this.current_user.id)
+
+                parseObject.save(null,{
+                    success(_obj){
+                        console.log('Saved ',_obj)
+                    },
+                    error(_obj, err){
+                        console.log('Failed ',_obj,err)
+                    }
+                })
+
+            },
             init_parse: function () {
                 console.log('init parse',this.$options.parse_class)
                 const class_name = this.$options.parse_class

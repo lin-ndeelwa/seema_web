@@ -65,3 +65,20 @@
 {"level":"info","message":"Create new client: f99da7b7-e6a8-4ef7-a941-7168431bdd5b","timestamp":"2018-04-15T09:13:37.184Z"}
 {"level":"info","message":"Client disconnect: f99da7b7-e6a8-4ef7-a941-7168431bdd5b","timestamp":"2018-04-15T09:13:53.510Z"}
 {"level":"info","message":"Create new client: 96d06758-2b78-4b78-98ae-0e8956b5912b","timestamp":"2018-04-15T09:13:57.096Z"}
+{"level":"info","message":"Create new client: 40d4ab8c-54ff-46e9-8964-093d4855e289","timestamp":"2018-04-15T13:54:22.923Z"}
+{"level":"info","message":"Create new client: 3728298b-266d-4b3b-bd94-9516dd604345","timestamp":"2018-04-15T13:56:51.771Z"}
+{"level":"info","message":"Create new client: b074a756-12c5-45cd-b764-213f9b5a8e14","timestamp":"2018-04-15T13:56:51.805Z"}
+{"level":"info","message":"Create new client: 93de5782-3d48-491f-928e-9d3bdf9fcdf9","timestamp":"2018-04-15T13:58:27.396Z"}
+{"level":"info","message":"Create new client: a33bbc45-89ab-4e38-ae6e-81cdc91523a1","timestamp":"2018-04-15T13:59:09.929Z"}
+{"level":"info","message":"Create new client: 7b507843-049c-476e-9f08-0f85858ecc75","timestamp":"2018-04-15T13:59:10.012Z"}
+{"level":"info","message":"Client disconnect: 7b507843-049c-476e-9f08-0f85858ecc75","timestamp":"2018-04-15T13:59:48.966Z"}
+{"level":"info","message":"Client disconnect: a33bbc45-89ab-4e38-ae6e-81cdc91523a1","timestamp":"2018-04-15T13:59:48.978Z"}
+{"level":"info","message":"Create new client: b3805cfe-1460-4a3b-b958-d5580885f9ee","timestamp":"2018-04-15T14:00:28.884Z"}
+{"level":"info","message":"Create new client: f5e08c49-a751-4305-923f-5c54c904562f","timestamp":"2018-04-15T14:00:28.890Z"}
+{"level":"info","message":"Create new client: ffc0fab8-d6ac-4220-b7dc-22d1d15e1747","timestamp":"2018-04-15T14:01:06.429Z"}
+{"error":{"code":103,"message":"Class agency already exists."},"level":"error","message":"Error generating response. ParseError { code: 103, message: 'Class agency already exists.' }","timestamp":"2018-04-15T14:01:06.643Z"}
+{"code":103,"message":"Class agency already exists.","level":"error","timestamp":"2018-04-15T14:01:06.656Z"}
+{"error":{"code":103,"message":"Class anything already exists."},"level":"error","message":"Error generating response. ParseError { code: 103, message: 'Class anything already exists.' }","timestamp":"2018-04-15T14:02:41.368Z"}
+{"code":103,"message":"Class anything already exists.","level":"error","timestamp":"2018-04-15T14:02:41.374Z"}
+{"level":"info","message":"Create new client: 71af294e-9bc9-41cb-bb7e-a5c2b67ac6f6","timestamp":"2018-04-15T14:02:41.474Z"}
+{"level":"info","message":"Create new client: d37a0ebc-8933-41bf-9c56-a75067433c89","timestamp":"2018-04-15T14:03:01.780Z"}
