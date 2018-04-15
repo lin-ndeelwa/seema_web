@@ -118,6 +118,7 @@ const parseMixin = function({router}){
                         .then(resolve)
                         .catch(reject)
 
+
                 } ))
 
             },
