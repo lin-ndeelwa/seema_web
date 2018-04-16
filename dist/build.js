@@ -43309,7 +43309,7 @@ function updateLink(linkElement, obj) {
 const server_url =  true ? `${window.location}` : 'http://localhost:3002/';
 const Parse = __webpack_require__(165);
 Parse.initialize("myAppId");
-Parse.serverURL = server_url;
+Parse.serverURL = `${server_url}parse`;
 Parse.masterKey = 'myMasterKey';
 
 //console.log(env)
