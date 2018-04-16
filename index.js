@@ -2,6 +2,7 @@ const express = require('express');
 const ParseServer = require('parse-server').ParseServer;
 const app = express();
 
+app.use(express.static('./'))
 let httpServer = require('http').createServer(app)
 
 const api = new ParseServer({
