@@ -1,9 +1,15 @@
 import router from "../router";
-
+const server_url = process.env.NODE_ENV === 'production' ?
+    `${window.location}`
+    : 'http://localhost:3002/'
 const Parse = require('parse')
 Parse.initialize("myAppId");
-Parse.serverURL = 'http://localhost:3000/parse'
+Parse.serverURL =  server_url
 Parse.masterKey = 'myMasterKey'
+
+
+
+//console.log(env)
 
 const parseMixin = function({router}){
     router.beforeEach((to, from, next) => {

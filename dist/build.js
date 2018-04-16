@@ -43306,11 +43306,13 @@ function updateLink(linkElement, obj) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__router__ = __webpack_require__(82);
 
-
+const server_url =  true ? `${window.location}` : 'http://localhost:3002/';
 const Parse = __webpack_require__(165);
 Parse.initialize("myAppId");
-Parse.serverURL = 'http://localhost:3000/parse';
+Parse.serverURL = server_url;
 Parse.masterKey = 'myMasterKey';
+
+//console.log(env)
 
 const parseMixin = function ({ router }) {
     router.beforeEach((to, from, next) => {

@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --inline --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-    "start":"node index.js"
+    "start":"node index.js",
+    "server-dev":"DB_URL=mongodb://localhost:27017/seema PORT=3000 nodemon  index.js"
   },
   "dependencies": {
     "parse-server": "^2.7.2",

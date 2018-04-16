@@ -8,7 +8,7 @@ let httpServer = require('http').createServer(app)
 let port = process.env.PORT || 3000
 
 const api = new ParseServer({
-    databaseURI: 'mongodb://seema:amees@ds121189.mlab.com:21189/seema', // Connection string for your MongoDB database
+    databaseURI: process.env.DB_URL,//'mongodb://seema:amees@ds121189.mlab.com:21189/seema', // Connection string for your MongoDB database
     cloud: './cloud/main.js', // Absolute path to your Cloud Code
     appId: 'myAppId',
     masterKey: 'myMasterKey', // Keep this key secret!
