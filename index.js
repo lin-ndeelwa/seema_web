@@ -5,7 +5,7 @@ const app = express();
 app.use(express.static('./'))
 let httpServer = require('http').createServer(app)
 
-let port = 3000 || process.env.PORT
+let port = process.env.PORT || 3000
 
 const api = new ParseServer({
     databaseURI: 'mongodb://seema:amees@ds121189.mlab.com:21189/seema', // Connection string for your MongoDB database
