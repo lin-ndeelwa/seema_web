@@ -27,7 +27,7 @@ ParseServer.createLiveQueryServer(httpServer,
 // Serve the Parse API on the /parse URL prefix
 app.use('/parse', api);
 
-console.log('env port',port)
+console.log('env port',port,process.env.PORT)
 httpServer.listen(port, function() {
     console.log('parse-server-example running on port 1337.');
 });
