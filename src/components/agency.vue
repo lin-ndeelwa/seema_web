@@ -137,10 +137,32 @@
                 agency:{}
             }
         },
+        created(){
+            this.get_my_agency()
+        },
         methods:{
             save(){
                 this.save_object(this.agency)
                 console.log(this.agency)
+            },
+            get_my_agency(){
+                let parse_query=[
+                    {
+                        query:'equalTo',
+                        field:'created_by',
+                        val:this.current_user.id
+                    }
+                ]
+
+                this.run_query(parse_query)
+                    .then(result => {
+                        console.log('Agency',result[0].attributes)
+                        let agency = {}
+                        if(!result[0]) return
+                        Object.keys(result[0].attributes).forEach(r => agency[r] = result[0].attributes[r])
+                        agency.id = result[0].id
+                        this.agency = agency
+                    })
             }
         }
     }

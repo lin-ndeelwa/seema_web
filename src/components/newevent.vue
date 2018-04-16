@@ -118,6 +118,7 @@
                 this.$emit('close')
             },
             save(){
+                console.log(this.event)
                 this.$emit('save',this.event)
                 this.$emit('close')
             }

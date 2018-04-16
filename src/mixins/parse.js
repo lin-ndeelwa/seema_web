@@ -1,7 +1,7 @@
 import router from "../router";
 const server_url = process.env.NODE_ENV === 'production' ?
     `${window.location}`
-    : 'http://localhost:3002/'
+    : 'http://localhost:3000/'
 const Parse = require('parse')
 Parse.initialize("myAppId");
 Parse.serverURL =  `${server_url}parse`
@@ -37,6 +37,7 @@ const parseMixin = function({router}){
     })
 
   return  {
+
         data() {
         return {
             custom_fields: ['field1'],
@@ -61,25 +62,73 @@ const parseMixin = function({router}){
                     parseObject.set(key,obj[key])
                 })
 
-                Object.set('created_by',this.current_user.id)
+                parseObject.set('created_by',this.current_user.id)
 
-                parseObject.save(null,{
-                    success(_obj){
-                        console.log('Saved ',_obj)
-                    },
-                    error(_obj, err){
-                        console.log('Failed ',_obj,err)
-                    }
-                })
+                console.log('saving',obj)
+
+                if(obj.id){
+                    var parseObj = Parse.Object.extend(this.class_name);
+                    var query = new Parse.Query(parseObj);
+                    query.get(obj.id, {
+                        success: function(res) {
+                            // The object was retrieved successfully.
+                            Object.keys(obj).forEach( key => {
+                                res.set(key,obj[key])
+                            })
+                            res.save(null,{
+                                success(_obj){
+                                    console.log('Saved ',_obj)
+                                },
+                                error(_obj, err){
+                                    console.log('Failed ',_obj,err)
+                                }
+                            })
+                        },
+                        error: function(object, error) {
+                            // The object was not retrieved successfully.
+                            // error is a Parse.Error with an error code and message.
+                        }
+                    });
+                }else{
+                    parseObject.save(null,{
+                        success(_obj){
+                            console.log('Saved ',_obj)
+                        },
+                        error(_obj, err){
+                            console.log('Failed ',_obj,err)
+                        }
+                    })
+                }
+
+            },
+            run_query:function(_query){
+                console.log(_query)
+                let query = new Parse.Query(this.class_name)
+                _query.forEach(q => query[q.query](q.field,q.val))
+                return new Promise(((resolve, reject) => {
+                    query.find({
+                        success: function(results) {
+
+                            console.log("Successfully retrieved " , results);
+                            resolve(results)
+                            // Do something with the returned Parse.Object values
+                        },
+                        error: function(error) {
+                            alert("Error: " + error.code + " " + error.message);
+                            reject(error)
+                        }
+                    });
+                }))
 
             },
             init_parse: function () {
-                console.log('init parse',this.$options.parse_class)
+                //console.log('init parse',this.$options.parse_class)
                 const class_name = this.$options.parse_class
                 const account = this.$options.account
                 if(account) this.user = Parse.User
                 if (!class_name) return
                 this.class_name = class_name
+                this.current_user = Parse.User.current()
                 const schema = new Parse.Schema(class_name)
                 const self = this;
                 console.log('class_name',class_name)
@@ -89,7 +138,9 @@ const parseMixin = function({router}){
                         self.custom_fields = Object.keys(_schema.fields)
                             .filter(field => !['ACL', 'createdAt', 'updatedAt', 'objectId'].includes(field))
                         let query = new Parse.Query(self.class_name)
+
                         let subscription = query.subscribe();
+
 
                         subscription.on('open', () => {
                             console.log('subscription opened');
