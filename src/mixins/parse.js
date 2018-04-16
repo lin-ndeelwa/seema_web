@@ -4,7 +4,7 @@ const server_url = process.env.NODE_ENV === 'production' ?
     : 'http://localhost:3002/'
 const Parse = require('parse')
 Parse.initialize("myAppId");
-Parse.serverURL =  server_url
+Parse.serverURL =  `${server_url}parse`
 Parse.masterKey = 'myMasterKey'
 
 
